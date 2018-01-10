@@ -1,0 +1,66 @@
+<?php
+
+// php select option value from database
+
+$hostname = "projectdb.cq5wbnnwdbg1.us-east-1.rds.amazonaws.com";
+$username = "groupusers";
+$password = "groupusers_appuser";
+$databaseName = "matmgmt";
+
+// connect to mysql database
+
+$connect = mysqli_connect("projectdb.cq5wbnnwdbg1.us-east-1.rds.amazonaws.com", "group6users", "group6users_appuser", "matmgmt");
+
+// mysql select query
+$query = "SELECT Description FROM matmgmt.Material where Description='Cotton';";
+
+// for method 1
+
+$result1 = mysqli_query($connect, $query);
+// for method 2
+
+$result2 = mysqli_query($connect, $query);
+
+$options = "";
+
+while($row2 = mysqli_fetch_array($result2))
+{
+    $options = $options."<option>$row2[1]</option>";
+}
+
+?>
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title> PHP SELECT OPTIONS FROM DATABASE </title>
+
+    </head>
+
+    <body>
+
+        <!--Method One-->
+
+        <select>
+
+            <?php while($row1 = mysqli_fetch_array($result1)):;?>
+
+            <option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
+
+            <?php endwhile;?>
+
+        </select>
+        
+        <!-- Method Two -->
+
+        <select>
+            <?php echo $options;?>
+        </select>
+
+    </body>
+
+</html>
+

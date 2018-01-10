@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+.buttonright {
+ right: 0;
+ top: 20;
+ position: absolute;
+ width:200px
+}
+.buttontop {
+ right:200;
+ top: 20;
+ position: absolute;
+ width:200px
+}
+.buttonsize {
+ width:200px
+}
+
+body{
+background-image:url("http://ak3.picdn.net/shutterstock/videos/925063/thumb/6.jpg")
+}
+</style>
+<body>
+<center>
+    <img src="http://www.acmesoftech.com/images/mms.jpg" alt="Avatar" class="avatar">
+</center>
+<header>
+<h1>sign in</h1>
+</header>
+
+
+<center>
+<form class="buttonsize" style="background-color:#B2D2F6" action="http://localhost/adbmsscripts/sample.php" name="login" method="post">
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
+  <div class="container" style="background-color:#">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+</center>
+</body>
+</html>
